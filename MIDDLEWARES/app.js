@@ -1,6 +1,7 @@
 
 const express  = require("express");
 const app = express();
+const ExpressError = require("./ExpressError");
 
 //middlewares
 
@@ -26,16 +27,16 @@ const app = express();
 //     next();
 // });
 
-const checkToken = (req, res, next) => {
+const checkToken = (req,res, next) => {
 
- let{token} = req.query;
- if (token === "giveaccess") {
-    next();
+ let {token} = req.query;
+ if (token === "giveaccess")  {
+   next();
  }
-throw new Error("ACCESS DENIED!");
+ throw new ExpressError(401,"ACCESS DENIED!");
 };
 
-app.get("/api",checkToken, (req,res) => {
+app.get("/api",checkToken,(req, res) => {
     res.send("data");
 });
 
@@ -43,7 +44,6 @@ app.use("/random", (req,res,next) => {
     console.log("i am onnly for random ");
     next();
 });
-
 
 
 app.get("/",(req,res) => {
@@ -55,11 +55,27 @@ app.get("/random", (req,res) => {
     res.send("this is an random page");
 });
 
-//error handling 
-app.use((req,res) => {
-  res.status(404).send("page not found !");
+
+app.get("/err",(res,req) => {
+   abcd=abs
 });
 
+app.get("/admin", (req,res) => {
+    throw new ExpressError(403, "Access to admin is forbidden");
+});
+
+app.use((err,req,res,next) => {
+ let {status = 500, message ="Some error occured"} = err;
+ res.status(status).send(message);
+})
+
+app.use((err,req,res,next) => {
+ console.log("------------ERROR 502--------------"); 
+ next(err);
+})
+
+
+//   
 app.listen(8080, () => {
     console.log("server listening to port 8080");
 });
