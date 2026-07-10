@@ -1,7 +1,0 @@
-status code status
-ex:
-
-200 - ok
-404 - not found 
-400 - badrequest
-500 - internal server error 

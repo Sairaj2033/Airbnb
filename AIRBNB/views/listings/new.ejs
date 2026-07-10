@@ -1,27 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
 <body>
     <h3>Create a New Listing</h3>
+   <div class="mb-3"> 
+     <form action="/listings" method="POST">
+        <label for="title" class="form-label">Enter Title</label>
+   <input 
+    type="text" 
+    name="listing[title]"
+    placeholder="Add a Catchy Title"
+    class="form-control">
+   </div>
+<!----->
+<br>
+<div class="mb-2>
     <form action="/listings" method="POST">
-    <input  type="text" name="listing[title]" placeholder="enter title">
-    <br> <br>
-    <textarea  type="text" name="listing[description]" placeholder="enter description ">
-    <br><br>
-    <input type="text"  name="listing[image]" placeholder="enter img URL/link">
-    <br><br>
-    <input type="number" name="listing[price]" placeholder="enter price">
-    <br><br>
-     <input type="text"  name="listing[country]" placeholder="enter your country">
-    <br><br>
-    <input type="text"  name="listing[loction]" placeholder="enter location">
-    <br><br>
-    <button>Add it! </button>
-    </form>
+    <label for="description" class="form-label">Description</label>
+   <input 
+    type="text" 
+    name="listing[description]"
+    placeholder="Enter Description"
+    class="form-control">
 
+ </div>
+<br>
+<div class="mb-4>
+     <form action="/listings" method="POST">
+        <label for="image" class="form-label">URL/Link</label>
+     <input type="text"
+       name="listing[image]" 
+       placeholder="enter img URL/link" class="form-control">
+
+</div>
+<br>
+<!-------------->
+<div class="row">
+
+    <div class="mb-3 col-md-4">
+
+    <form action="/listings" method="POST">
+    <label for="price" class="form-label">Price</label>
+  <input type="number"
+  name="listing[price]" 
+  placeholder="Enter Price ex.2000" class="form-control">
+    
+
+</div>
+  
+
+<div class="mb-3 col-md-8">
+
+    <form action="/listings" method="POST">
+    <label for="country" class="form-label">Country</label>
+  <input type="text"
+    name="listing[country]"
+    placeholder="Enter your Country ex.india,pakisthan" class="form-control">
+   
+
+</div>
+
+</div>
+
+
+  <br>
+<div class="mb-3>
+
+
+    <form action="/listings" method="POST">
+    <label for="location" class="form-label">Location</label>
+  <input type="text" 
+   name="listing[loction]"
+   placeholder="enter location" class="form-control">
+    
+
+</div>
+
+ <br>
+    <button class="btn btn-dark  ">Add it! </button>
+    </form>
+</div>
+</div>
+
+<br>
 </body>
-</html>

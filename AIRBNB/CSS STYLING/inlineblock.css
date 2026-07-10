@@ -1,8 +1,0 @@
-div{
-    height: 200px;
-    width: 50%; /* 50% of screen */
-    background-color: aqua;
-    border: solid black  ;
-    margin:  2px;
-    display: inline-block;
-}

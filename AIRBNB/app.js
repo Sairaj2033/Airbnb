@@ -29,8 +29,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
-
-
+app.engine("ejs", ejsMate );
+app.use(express.static(path.join(__dirname, "/public")));
 
 
 // root route
@@ -120,3 +120,7 @@ app.delete("/listings/:id", async (req, res) => {
 app.listen(8080, () => {
   console.log("server is listening on port 8080");
 });
+
+
+
+//explain what isi boilerplate in short
