@@ -18,7 +18,7 @@
 
 ## 📖 About
 
-**Exploring WebDev** is an open-source repository dedicated to learning and practicing modern web development through real-world projects.
+**WebDev-Expedition** is an open-source repository dedicated to learning and practicing modern web development through real-world projects.
 
 It serves as a central place for:
 
@@ -46,7 +46,7 @@ It serves as a central place for:
 ## 📂 Repository Structure
 
 ```text
-📦 Exploring-WebDev
+📦 WebDev-Expedition
 ├── 📁 HTML & CSS
 ├── 📁 JavaScript
 ├── 📁 React
