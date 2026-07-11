@@ -1,1 +1,0 @@
-returns element as an html colletion or empty collection(if noot found)
