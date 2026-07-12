@@ -64,10 +64,8 @@ Focused on modern UI engineering. This phase transitions into React.js component
 
 ---
 
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit a pull request.
-
----
 
 ## ⭐ Support
 If you find this repository useful, consider giving it a **⭐** to support the project!
+---
+## This is My journey of Completing the WebDev-Expedition-Phase-2 
