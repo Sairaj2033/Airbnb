@@ -1,6 +1,6 @@
-# 🌐 WebDev-Expedition
+# 🌐 WebDev-Expedition-phase-2
 
-> A growing collection of web development projects, code snippets, and practical implementations covering modern frontend and backend technologies.
+> A growing collection of web development projects, code snippets, and practical implementations covering modern frontend, backend, and massive full-stack clones.
 
 <p align="center">
 
@@ -8,6 +8,8 @@
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+<img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"/>
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
 <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white"/>
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
@@ -18,18 +20,14 @@
 
 ## 📖 About
 
-**WebDev-Expedition** is an open-source repository dedicated to learning and practicing modern web development through real-world projects.
+**WebDev-Expedition** is an open-source repository dedicated to a day-by-day mastery of modern web development. 
 
-It serves as a central place for:
+This repository documents a progressive 60+ day intensive journey, transitioning from core database relationships and backend architecture into advanced React state management, utility-first styling, and ultimately, building production-grade clones of industry-leading platforms.
 
-- 🌐 Frontend development projects
-- ⚙️ Backend APIs and server-side applications
-- 🚀 Full Stack MERN applications
-- 🎨 UI/UX experiments
-- 📦 Reusable components
-- 🧩 JavaScript concepts
-- 💡 Mini projects and coding challenges
-- 🔥 Best practices and modern development workflows
+**Core Focus Areas:**
+- ⚙️ **Backend Mastery:** Database relationships and server-side logic (Days 46+)
+- ⚛️ **Advanced Frontend:** React.js, Tailwind CSS, Redux & Redux Toolkit (Days 56-64)
+- 🚀 **Major Full-Stack Clones:** Zoom, GitHub, and Zerodha
 
 ---
 
@@ -37,7 +35,7 @@ It serves as a central place for:
 
 <p align="center">
 
-<img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,express,mongodb,tailwind,bootstrap,git,github,vscode,npm,postman"/>
+<img src="https://skillicons.dev/icons?i=html,css,js,react,redux,tailwind,nodejs,express,mongodb,bootstrap,git,github,vscode,npm,postman"/>
 
 </p>
 
@@ -47,17 +45,17 @@ It serves as a central place for:
 
 ```text
 📦 WebDev-Expedition
-├── 📁 HTML & CSS
-├── 📁 JavaScript
-├── 📁 React
-├── 📁 Node.js
-├── 📁 Express
-├── 📁 MongoDB
-├── 📁 MERN Stack
-├── 📁 UI Components
-├── 📁 APIs
-└── 📁 Full Stack Projects
-```
+├── 📁 Phase 1: Core Architecture (Days 46-55)
+│   ├── 📁 Day 46: Database Relationships
+│   └── 📁 Days 47-55: Backend & Integration Projects
+├── 📁 Phase 2: Advanced Frontend (Days 56-64)
+│   ├── 📁 Days 56-62: React.js Fundamentals
+│   ├── 📁 Day 63: Tailwind CSS Integration
+│   └── 📁 Day 64: Redux & Redux Toolkit State Management
+└── 📁 Phase 3: Major Industry Clones
+    ├── 📁 Zoom Clone (Parts 1-3)
+    ├── 📁 GitHub Clone (Parts 1-3)
+    └── 📁 Zerodha Clone (Parts 1-3)
 
 ---
 
