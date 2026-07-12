@@ -41,6 +41,7 @@ Focused on modern UI engineering. This phase transitions into React.js component
 
 ---
 ## 📁 File Structure
+```text
 📦 WebDev-Expedition
 ├── 📁 Phase 1: Core Architecture (Days 46-55)
 │   ├── 📁 Day 46: Database Relationships
@@ -53,6 +54,7 @@ Focused on modern UI engineering. This phase transitions into React.js component
     ├── 📁 Zoom Clone (Parts 1-3)
     ├── 📁 GitHub Clone (Parts 1-3)
     └── 📁 Zerodha Clone (Parts 1-3)
+```
     
 ## 🎯 Objectives
 - Architect scalable relational and NoSQL databases.
