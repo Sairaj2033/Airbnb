@@ -1,0 +1,157 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-weight: 800;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+ min-height: 100vh;
+
+}
+
+.container {
+    flex: 1;
+}
+
+
+.navbar {
+    height: 5rem;
+    background-color:rgb(244, 244, 244);
+}
+
+body {
+    background-color: rgb(244, 244, 244);
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+/* 
+footer */
+
+.f-info-links a {
+ text-decoration: none;
+ color: #222222;
+ 
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+    color: grey;
+}
+
+
+.f-info-socials {
+    width: 100%;
+}
+.f-info-socials a {
+    color: #222222;
+
+    font-size: 1.2rem ;
+}
+
+
+.f-info-socials a:hover {
+    color: grey;
+}
+
+.f-info {
+    height: 8rem;
+    background-color: rgb(210, 210, 210);
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+    align-items: center;
+    text-align: center;
+   
+}
+
+.f-info-links {
+    width: 100%;
+}
+
+.f-info-brand {
+    width: 100%;
+}
+
+
+/* CARDS */
+
+.card {
+border: none !important ; 
+margin-bottom: 2rem;
+
+
+
+}
+
+.card-img {
+    border-radius: 1.2rem !important;
+    width: 95% !important;
+    object-fit: cover !important;
+   
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+   font-weight: 400;
+}
+
+.card-a {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.18;
+    background-color: white
+}
+
+/* Show Page */
+
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+     
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+.btn1 {
+    height: 2.5rem !important;
+    width: 6.7rem !important
+}
+
+.btn2 {
+ 
+ 
+ background-color: rgb(255, 0, 0) !important;
+}
+
+.btns {
+    display: flex;
+    align-items: center; /* Forces the buttons to vertically center with each other */
+}
+
+.delete-btn {
+    white-space: nowrap; 
+}
+
+.btn-add {
+    width: 6rem !important;
+     margin-bottom: 1.5rem !important;
+    margin-left: 0.7rem !important;
+}
