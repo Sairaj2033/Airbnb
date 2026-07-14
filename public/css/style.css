@@ -79,7 +79,7 @@ footer */
 
 /* CARDS */
 
-.card {
+.lisitng-card {
 border: none !important ; 
 margin-bottom: 2rem;
 
@@ -155,3 +155,5 @@ margin-bottom: 2rem;
      margin-bottom: 1.5rem !important;
     margin-left: 0.7rem !important;
 }
+/* //review */
+
