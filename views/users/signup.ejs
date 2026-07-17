@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate") %>
+  <div class="row">
+    <div class="col-8 offset-2">
+<br><br>
+      <h2>Signup</h2>
+<br>
+      <form action="/signup" method="POST" novalidate class="needs-validation ">
+        <!-- explaint these inn short diffent classes  and attributes like novalidate class="needs-validation valid feedback and invalid feednback and so on  -->
+        <div class="mb-3">
+
+          <label for="username" class="form-label">Username</label>
+          <input type="text" name="username" placeholder="Enter Username" class="form-control" required>
+          <div class=" valid-feedback">Valid!</div>
+          <div class="invalid-feedback">Invalid!</div>
+        </div>
+        <!----->
+        
+
+                  <div class="mb-3">
+
+          <label for="Password" class="form-label">email</label>
+          <input type="text" name="email" placeholder="Enter email" class="form-control" required>
+          <div class=" valid-feedback">Valid!</div>
+          <div class="invalid-feedback">Invalid!</div>
+        </div>
+        
+
+            <div class="mb-3">
+
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" placeholder="Password" class="form-control" required>
+          <div class=" valid-feedback">Valid!</div>
+          <div class="invalid-feedback">Invalid!</div>
+        </div>
+        <!----->
+        
+        
+
+        <button  style="background-color: green; border: none;" class="btn btn-add btn-dark">Signup</button>
+      </form>
+    </div> 
+  </div>
+
+  <br>

@@ -5,13 +5,35 @@ const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-//const wrapAsync = require("./utils/wrapsync.js");
+const wrapAsync = require("./utils/wrapsync.js");
 const ExpressError = require("./utils/ExpressError.js")
 //const {listingSchema, reviewSchema} = require("./schema.js");
 // const Review = require("./models/reviews.js")
-const reviews= require("./routes/review.js");
-const listings = require("./routes/listing.js");
+const reviewsRouter= require("./routes/review.js");
+const listingsRouter = require("./routes/listing.js");
+const userRouter = require("./routes/user.js");
+
 const cookieParser = require("cookie-parser");
+
+const session = require("express-session");
+const flash = require("connect-flash"); 
+
+const passport = require("passport"); 
+const LocalStatergy = require("passport-local")
+const User = require("./models/User.js");
+
+const sessionOptions = {
+  secret: "supersecret",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    expires : Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge:  7 * 24 * 60 * 60 * 1000,
+    httpOnly : true
+  }
+};
+
+
 /////////////////CONNECTION ///////////////////
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -20,16 +42,60 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
-// main()
-//   .then(() => {
-//     console.log("connected to DB");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+main()
+  .then(() => {
+    console.log("connected to DB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+//////////////////////////////////
 
 
 
+// root route
+app.get("/", (req, res) => {
+  console.dir(req.cookies);
+  res.send("hi i am root ");
+});
+
+
+//////////////////////////////SESSION: MIDDLEWARE?//////////////
+app.use(session (sessionOptions));
+app.use(flash()); 
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStatergy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+/////////////////////////////////////
+// app.get("/reqcount", (req,res) => {
+//   if(req.session.count) {
+//     req.session.count++
+//   }
+//   else{
+//     req.session.count = 1;
+//   }
+ 
+//   res.send(`You sent a request ${req.session.count} times`);
+// });
+/////////////////////////////////////
+
+
+
+// app.use(session (sessionOptions));
+// app.use(flash());
+
+
+
+
+
+/////////////////////////////
 app.use(cookieParser("secretcode"));
 
 
@@ -42,6 +108,18 @@ app.get("/verify",(req,res) =>{
   console.log(req.signedCookies);
   res.send("verified");
 })
+
+//////////////////register////////////
+app.get("/register", (req,res) => {
+  let {name = "User"} = req.query; 
+  req.session.name = name;
+ req.flash("success", "user registerd sucessfully!");
+  res.redirect("/hello");
+});
+
+app.get("/hello", (req,res) => {
+res.send(`hello,${req.session.name}`);
+ });
 
 
 
@@ -70,11 +148,6 @@ app.get("/greet", (req,res) => {
   res.send(`Hi, ${name}`);
 })
 
-// root route
-app.get("/", (req, res) => {
-  console.dir(req.cookies);
-  res.send("hi i am root ");
-});
 
 
 
@@ -163,9 +236,38 @@ app.get("/", (req, res) => {
 //   res.redirect("/listings");
 // }));
 
-app.use("/listings", listings);
-app.use("/listings/:id/reviews",reviews);
 
+/////////////////////FLASH//////////////////////////////////////////
+
+
+app.use((req,res,next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+ 
+  next();
+});
+
+// Add the missing ) after wrapAsync
+// app.get("/demouser", wrapAsync(async (req, res, next) => {
+//     let fakeUser = new User({
+//         email: "sai@gmail.com",
+//         username: "sai",
+//     });
+//     let registeredUser = await User.register(fakeUser, "helloworld");
+//     res.send(registeredUser);
+// }));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+/////////MAIN: ROUTES/////////////////////////////////////
+app.use("/listings", listingsRouter);
+app.use("/listings/:id/reviews",reviewsRouter);
+app.use("/",userRouter);
 // /////////////// REVIEWS:POST ROUTE //////////////////////
 // app.post("/listings/:id/reviews", validateReview, wrapAsync (async (req,res) => {
 //   let listing = await Listing.findById(req.params.id);
