@@ -1,38 +1,35 @@
 const express = require("express");
-const router = express.Router({mergeParams: true});
-const User = require("../models/User.js")
+const router = express.Router({ mergeParams: true });
+const User = require("../models/User.js");
 const wrapAsync = require("../utils/wrapsync");
 const passport = require("passport");
+const { saveRedirectUrl } = require("../controllers/user.js");
 
-router.get("/signup", (req,res) => {
-    res.render("users/signup.ejs"); 
-});
+const userController = require("../controllers/user.js");
 
-router.post("/signup", wrapAsync( async(req,res) => {
-    try {
-           let {username ,email ,password} = req.body;
-     const newUser = new User({email, username});
-     const registeredUser = await User.register(newUser,password);
-     console.log(registeredUser);
-     req.flash("success", "Welcome to Airbnb!");
-     res.redirect("/listings");
-    }
-  catch (e) {
-   req.flash("error", e.message);
-   res.redirect("/signup");
-  }
-}));
-
-router.get("/signin", (req,res) =>  {
- res.render("users/signin.ejs")
- 
+router.route("/signup")
+.get( (req, res) => {
+  res.render("users/signup.ejs");
 })
+.post( wrapAsync(userController.Signup));
 
-router.post("/signin",passport.authenticate("local", {failureRedirect : '/signin', failureFlash: true}),
- async(req,res) => {
- req.flash("success","Welcome to Airbnb!");
- 
- res.redirect("/listings");
-});
+
+
+router.route("/signin")
+.get( userController.SigninForm)
+.post(passport.authenticate("local", {
+    failureRedirect: "/signin",
+    failureFlash: true,
+  }),
+  userController.Signin,
+);
+
+
+
+
+
+
+
+router.get("/logout", userController.logout);
 
 module.exports = router;

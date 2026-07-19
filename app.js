@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !="production") {
+  require('dotenv').config()
+}
+
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -22,6 +27,12 @@ const passport = require("passport");
 const LocalStatergy = require("passport-local")
 const User = require("./models/User.js");
 
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
+
+
+
+
 const sessionOptions = {
   secret: "supersecret",
   resave: false,
@@ -32,6 +43,9 @@ const sessionOptions = {
     httpOnly : true
   }
 };
+
+
+
 
 
 /////////////////CONNECTION ///////////////////
@@ -71,6 +85,10 @@ passport.use(new LocalStatergy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+app.use((req, res, next) => {
+    res.locals.currUser = req.user;
+    next();
+});
 
 
 /////////////////////////////////////
@@ -124,7 +142,7 @@ res.send(`hello,${req.session.name}`);
 
 
   
-//////////////////////////////////////////
+/////////////////////PARSERS/////////////////////
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
@@ -243,7 +261,7 @@ app.get("/greet", (req,res) => {
 app.use((req,res,next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
- 
+  res.locals.currUser = req.user;
   next();
 });
 

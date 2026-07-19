@@ -4,7 +4,7 @@
 
       <h3>Create a New Listing</h3>
 
-      <form action="/listings" method="POST" novalidate class="needs-validation ">
+      <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
         <!-- explaint these inn short diffent classes  and attributes like novalidate class="needs-validation valid feedback and invalid feednback and so on  -->
         <div class="mb-3">
 
@@ -16,7 +16,7 @@
         <!----->
 
 
-        <br>
+       
         <div class="mb-2">
 
           <label for="description" class="form-label">Description</label>
@@ -25,9 +25,9 @@
           <div class="invalid-feedback">Enter a Valid Description</div>
 
         </div>
-        <br>
+        
 
-        <div class="mb-4">
+        <!-- <div class="mb-4">
 
           <label for="image" class="form-label">URL/Link</label>
           <input type="text" name="listing[image]" placeholder="enter img URL/link" class="form-control">
@@ -35,8 +35,16 @@
           <div class="invalid-feedback">Uploas an Image</div>
 
         </div>
-        <br>
+         -->
 
+          <div class="mb-4">
+
+          <label for="image" class="form-label">Upload Listing Image</label>
+          <input type="file" name="listing[image]"  class="form-control">
+          <div class="valid-feedback">IMG is awesome!</div>
+          <div class="invalid-feedback">Uploas an Image</div>
+
+        </div>
 
 
         <!-------------->
@@ -65,7 +73,7 @@
         </div>
 
 
-        <br>
+       
         <div class="mb-3">
           <label for="location" class="form-label">Location</label>
           <input type="text" name="listing[location]" placeholder="enter location" class="form-control" required>
@@ -73,8 +81,8 @@
           <div class="invalid-feedback">Invalid Location!</div>
         </div>
 
-        <br>
-        <button class="btn btn-add btn-dark">Add it!</button>
+     
+        <button  class="btn btn-add btn-dark">Add it!</button>
       </form>
     </div> 
   </div>
