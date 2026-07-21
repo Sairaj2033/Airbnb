@@ -49,7 +49,7 @@ const sessionOptions = {
 
 
 /////////////////CONNECTION ///////////////////
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.ATLASDB_URL;
 
 // connect DB
 async function main() {
@@ -346,9 +346,10 @@ app.use((err, req, res, next) => {
 });
 
 /////////////////////////////////// start server/////////////////////
-app.listen(8080, () => {
-  console.log("server is listening on port 8080");
-});
+const PORT = process.env.PORT || 8080;
 
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
 //explain what isi boilerplate in short
 // als expalain why we need to wrap the route vs not wraped also whaats diff  between wrapAsync vs async vs tryy and err
