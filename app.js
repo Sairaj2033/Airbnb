@@ -27,9 +27,6 @@ const passport = require("passport");
 const LocalStatergy = require("passport-local")
 const User = require("./models/User.js");
 
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
-
 
 
 
