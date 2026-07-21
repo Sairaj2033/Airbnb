@@ -6,39 +6,49 @@ const Listing = require("../models/listings.js");
 const wrapAsync = require("../utils/wrapsync.js");
 const listingController = require("../controllers/listing.js");
 
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
+const {storage} = require("../CloudConfig.js")
+const multer  = require('multer');
+const { isLoggedIn } = require("../middleware.js");
+const upload = multer({storage})
 
 
 
 // Middleware schema for lisitngs
 const validateListing = (req, res, next) => {
+  console.log("BODY:", req.body);
+  console.log("FILE:", req.file);
+
   let { error } = listingSchema.validate(req.body);
 
   if (error) {
+    console.log(error.details);
     let errMsg = error.details.map((el) => el.message).join(",");
     throw new ExpressError(400, errMsg);
-  } else {
-    next();
   }
+
+  next();
 };
 
 
 router.route("/")
 .get(wrapAsync(listingController.index))  //index
-// .post(validateListing, wrapAsync(listingController.createListing)); //create
-.post(upload.single("listing[image]"),(req, res) => {
-res.send(req.file);
+.post(isLoggedIn,upload.single("listing[image]"), validateListing, wrapAsync(listingController.createListing)); //create
+// .post(,(req, res) => {
+// res.send(req.file);
 
-})
+// })
 
 /////////////// NEW ROUTE /////////////////////////
-router.get("/new", listingController.renderNewForm);
+router.get("/new",isLoggedIn, listingController.renderNewForm);
+
 
 
 router.route("/:id")
-.get(wrapAsync(listingController.showListing)) ///show route
-.put(validateListing, wrapAsync(listingController.updateListing)) //update route
+///show route
+.get(wrapAsync(listingController.showListing)) 
+//update  route(location map)
+.put(isLoggedIn, upload.single("listing[image]"), validateListing, wrapAsync(listingController.updateListing)) 
+//delete route 
 .delete(wrapAsync(listingController.deleteListing));
 
 

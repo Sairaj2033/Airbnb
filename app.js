@@ -69,10 +69,10 @@ main()
 
 
 // root route
-app.get("/", (req, res) => {
-  console.dir(req.cookies);
-  res.send("hi i am root ");
-});
+// app.get("/", (req, res) => {
+//   console.dir(req.cookies);
+//   res.send("hi i am root ");
+// });
 
 
 //////////////////////////////SESSION: MIDDLEWARE?//////////////
@@ -89,7 +89,12 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-
+//navbar
+app.use((req, res, next) => {
+    res.locals.currPath = req.originalUrl; // <--- ADD THIS LINE
+    // ... your other res.locals (like success, error, currentUser)
+    next();
+});
 
 /////////////////////////////////////
 // app.get("/reqcount", (req,res) => {

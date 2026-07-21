@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top"> <!--  //explain this one also  -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"> <img style="height: 2.4rem; margin: 5px; margin-top: 0.6rem;"
+        src="/images/airbnb.png"><b style="color: #FF385C;">airbnb </b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+
+        <a class="nav-link" href="/listings"><b>Explore</b></a>
+             </div>
+    </div>
+  </div>
+
+
+<a style="margin-right: 1.9rem;" class="nav-link text-nowrap" href="/listings/new"><b>Become host </b></a>
+  
+<% if(!currUser) { %>
+    <div  style="margin-right: 2rem;" class="navbar-nav ms-20">
+      <a class="nav-link" href="/signin"><b>Signin</b></a>
+    </div>
+
+  <div  style="margin-right: 2rem;" class="navbar-nav ms-20">
+    <a class="nav-link" href="/signup"><b>Signup</b></a>
+  </div>
+<% } %>
+
+<% if(currUser) { %>
+ <div  style="margin-right: 2rem;" class="navbar-nav ms-20">
+    <a class="nav-link" href="/logout"><b>LogOut</b></a>
+</div>
+
+<% } %>
+     
+</nav>

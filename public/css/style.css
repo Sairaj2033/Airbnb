@@ -17,7 +17,7 @@ body {
 
 .navbar {
     height: 5rem;
-    background-color:rgb(244, 244, 244);
+    /* background-color:rgb(244, 244, 244); */
 }
 
 body {
@@ -156,3 +156,35 @@ margin-bottom: 2rem;
 }
 /* //review */
 
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+/* ////navbar */
+/* Force the header to stick no matter what */
+header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+}
+
+/* If that doesn't work, ensure body doesn't have overflow: hidden */
+body {
+    overflow-x: hidden; /* This is okay, but avoid overflow: hidden or auto on body */
+}
+
+/* Make it smooth */
+.hvr-size {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0.75; /* Start slightly faded */
+}
+
+/* Define what happens on hover */
+.hvr-size:hover {
+    opacity: 1; /* Become fully opaque */
+    color: black !important; /* Force black text */
+    transform: scale(1.05); /* Optional: Slight zoom effect */
+    
+}

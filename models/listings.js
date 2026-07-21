@@ -14,18 +14,9 @@ const listingSchema = new Schema({
   description: String,
 
   image: {
-    type: String,
-
-    // default image if not provided
-    default:
-      "https://img.freepik.com/free-photo/sunset-time-tropical-beach-sea-with-coconut-palm-tree_74190-1075.jpg",
-
-    // custom setter
-    set: (v) =>
-      v === ""
-        ? "https://img.freepik.com/free-photo/sunset-time-tropical-beach-sea-with-coconut-palm-tree_74190-1075.jpg"
-        : v,
-  },
+    url:String,
+    filename: String,
+   },
 
   price: Number,
 
@@ -36,7 +27,16 @@ const listingSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Review",
     }
-  ]
+  ],
+
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  geometry: {
+  lat: Number,
+  lon: Number,
+},
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
