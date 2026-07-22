@@ -1,10 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 
-<div style="margin-top: 1rem !important; margin-bottom: 1.5rem !important;">
-  <% if(!currUser){ %>
-  <p style="background-color: rgb(0, 0, 0); height: 50px !important; border-radius: 3rem; " class=" alert alert-success alert-dismissible fade show col-10 offset-1 mt-2 d-flex justify-content-center align-items-center" role="alert"> <a  href="/signup"> <button  style=" border: none; font-size: 17px; margin-left: 1.5rem !important;" class="btn  ms-5" > <b style="color: rgb(255, 255, 255);">Get Started!</b></button></a></p>
- <% } %>  
-</div>
+
   
 
 <!-- <h3 style="text-align: center;">All Listings</h3> -->
@@ -12,12 +8,17 @@
 <a href="/listings/new"><button>Create New Listing</button></a>
 </form> -->
 
+ <br>
 
-<div>
-
+<div >
+   <h5 style="display: inline !important;"> <b>Popular homes nearby</b></h5>  <img   src="/images/right-arrow.png" style="height: 1.8rem;display: inline; margin-left: 0.4rem;" alt=""></h4>
 </div>
- 
-<div class="row row-cols-lg-6 row-cols-md-3 row-cols-sm-1">
+
+<br>
+
+
+
+<div  class="row row-cols-lg-6 row-cols-md-3 row-cols-sm-1">
      <% for(let listing of  allListings) { %>
 <a  class="card-a" href="/listings/<%= listing._id %>">        
 <div class=" card lisitng-card" style="width: 13rem">
@@ -39,4 +40,6 @@
 </a>
 <% } %>
 </div>
+
+
 
