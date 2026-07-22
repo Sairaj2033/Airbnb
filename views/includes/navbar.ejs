@@ -1,7 +1,7 @@
 <% let isListingPage = typeof currPath !== 'undefined' && currPath.startsWith('/listings/') && currPath !== '/listings/new' && currPath !== '/listings/'; %>
 <header class=" sticky-top bg-white border-bottom " style=" top: 0; z-index: 1030; width: 100%;">
 
-<nav class=" navbar navbar-expand-md bg-body-light  px-4 py-3">
+<nav class=" navbar navbar-expand-md bg-body-light  px-0 py-0">
     <!-- left -->
  <div class="container-fluid d-flex justify-content-between align-items-center" style="margin-top: 1.7rem;margin-right: 1rem;">
 
@@ -15,7 +15,7 @@
 <div style="margin-left: 9rem;">
  <div class="d-none d-md-flex gap-4" >
 
-<div style="">
+
     <div class="hvr">
         <a href="/listings" class="  nav-link fw-bold text-dark  border-dark border-2 "> <img class="hvr" style="height: 3rem;"  src="/images/house.gif" alt="">  <div> Homes</div></a>
   
@@ -29,7 +29,7 @@
     <div class="hvr">
         <a href="#" class="nav-link   fw-bold text-dark  border-dark border-2"> <img class="hvr" style="height: 3rem; margin-left: 9px; "  src="/images/hotel-ring.gif" alt=""> <div> Services</div></a>
 
-    </div>
+    
 </div>
 
          </div>
@@ -37,7 +37,7 @@
 
 <% if(currUser) { %>
 <div id="compact-search"
-class="border rounded-pill shadow-sm d-flex align-items-center px-3 py-2 gap-2 bg-white"
+class="border rounded-pill shadow-sm d-none d-md-flex align-items-center px-3 py-2 gap-2 bg-white"
 style=" height: 5rem !important;
 position: absolute;
 left: 50%;
@@ -72,17 +72,19 @@ cursor: pointer;
             </button>
             <ul class="dropdown-menu dropdown-menu-en ">
 
+            <li> <a href="/listings/new" class="nav-link dropdown-item " style="font-size: 15px;">Become a host</a></li>
+                 
              <% if(!currUser) { %>
-                <li> <a  class="dropdown-item" href="/signup">Sign up</a></li>
+                <li> <a  class="dropdown-item" href="/signup" style="font-size: 15px"; >Sign up</a></li>
              <% } %>
 
              <% if(!currUser) { %>
-                 <li> <a class="dropdown-item" href="/signin">Sign in</a></li>
+                 <li> <a class="dropdown-item" href="/signin" style="font-size: 15px";>Sign in</a></li>
              <% } %>
 
 
               <% if(currUser) { %>
-                 <li><a class="dropdown-item" href="/logout">LogOut</a></li>
+                 <li><a class="dropdown-item" href="/logout"  style="font-size: 15px";>LogOut</a></li>
               <% } %>   
             </ul>
 
