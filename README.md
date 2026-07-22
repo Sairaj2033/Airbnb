@@ -162,12 +162,3 @@ http://localhost:8080
 
 ### ⭐ If you found this project helpful, consider giving it a star!
 
-**Built with ❤️ by Sairaj Patil**
-
-</div>
-
-### ⭐ Star this repository if you found it helpful!
-
-Made with ❤️ by **Sairaj Patil**
-
-</div>
