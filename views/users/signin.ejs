@@ -4,16 +4,32 @@
 
 
   <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-4 offset-4">
 <br><br>
-      <h2>Sign in</h2>
+
+
+
+
+
+<div class="container-fluid d-flex justify-content-between align-items-center" style="margin-left: 5rem;">
+
+  <a class="navbar-brand" href="/listings"> <img style="height: 3.2rem; margin-left: 4.75rem;"
+        src="/images/airbnb.png">
+
+</a>
+</div>
+<br>
+<div style="margin-left: 9rem;">
+  <h2><b>Sign in </b></h2>
+</div>
+      
 <br>
       <form action="/signin" method="POST" novalidate class="needs-validation ">
         <!-- explaint these inn short diffent classes  and attributes like novalidate class="needs-validation valid feedback and invalid feednback and so on  -->
-        <div class="mb-3">
+        <div class="mb-2">
 
-          <label for="username" class="form-label">Username or email</label>
-          <input type="text" name="username" placeholder="Enter Username or email" class="form-control" required>
+          <label  for="username" class="form-label">Username or email</label>
+          <input style="height: 3rem;" type="text" name="username" placeholder="Enter username or email" class="form-control" required>
           <div class=" valid-feedback">Valid!</div>
           <div class="invalid-feedback">Invalid!</div>
         </div>
@@ -24,7 +40,7 @@
             <div class="mb-3">
 
           <label for="password" class="form-label">Password</label>
-          <input type="password" name="password" placeholder="Password" class="form-control" required>
+          <input  style="height: 3rem;" type="password" name="password" placeholder="Enter your password" class="form-control" required>
           <div class=" valid-feedback">Valid!</div>
           <div class="invalid-feedback">Invalid!</div>
         </div>
@@ -32,8 +48,18 @@
         
         
 
-        <button  style="background-color: green; border: none;" class="btn btn-add btn-dark">Sign in</button>
+        <button  style=" border-radius: 12px; height: 3rem; background-color:  #ff365b;font-weight: 600; width: 26rem !important; border: none;" class="btn btn-add btn-dark ms-1" >Continue</button>
+      
+           
+      <div > 
+        <p>New here?<a href="/signup"  style=" display: inline !important; color:#ff365b !important ; " class="nav-link "> Go to Sign Up</a></p>
+      </div>
+
+
       </form>
+   
+  
+
     </div> 
   </div>
 
