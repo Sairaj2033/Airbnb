@@ -188,3 +188,13 @@ body {
     transform: scale(1.05); /* Optional: Slight zoom effect */
     
 }
+
+.hvr {
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;   
+}
+
+.hvr:hover {
+    
+    transform: scale(1.05) !important;
+}
