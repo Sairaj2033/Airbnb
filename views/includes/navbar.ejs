@@ -6,12 +6,13 @@
  <div class="container-fluid d-flex justify-content-between align-items-center" style="margin-top: 1.7rem;margin-right: 1rem;">
 
   <a class="navbar-brand" href="/listings"> <img style="height: 2.0rem; margin: 5px;"
-        src="/images/airbnb.png"><div style="color: #FF385C;font-size: x-large;display: inline; font-weight:600;">airbnb </div></a>
+        src="/images/airbnb.png"><div style="color: #FF385C;font-size: x-large;display: inline; font-weight:600;">airbnb
+             </div></a>
 
  <!-- </div> -->
 
 <!-- centre  -->
- <!--  if (!currUser){  -->
+<div style="margin-left: 9rem;">
  <div class="d-none d-md-flex gap-4" >
 
 
@@ -32,7 +33,9 @@
 
 
          </div>
+         </div>
 
+<% if(currUser) { %>
 <div id="compact-search"
 class="border rounded-pill shadow-sm d-flex align-items-center px-3 py-2 gap-2 bg-white"
 style=" height: 5rem !important;
@@ -52,16 +55,15 @@ cursor: pointer;
              <a href="/listings/new"> <i class="fa-solid fa-plus text-white"></i></a>   
             </button>
     </div>
- <!--  }  -->
 
 
+<% }%>
 
     <!-- right -->
      <div class="d-flex align-items-center gap-3">
 
-         <% if (!currUser){ %>
             <a href="/listings/new" class="nav-link fw-semibold d-none d-sm-block "> Become a host</a>
-        <% } %>
+        
         <button class=" btn btn-light rounded-circle border-0"> <i class="fa-solid fa-globe"></i> </button>
         <div class="dropdown">
             <button class="btn btn-light border rounded-pill d-flex align-items-center gap-2 px-3 py-2 " type="button" data-bs-toggle="dropdown">
@@ -91,6 +93,7 @@ cursor: pointer;
 </nav>
 
 <!-- 4. SEARCH BAR -->
+ <% if (currUser) { %>
 <% if (!isListingPage) { %>
     <!-- Added id="big-search" and inline CSS for smooth fading -->
     <div  id="big-search" class="container d-flex justify-content-center py-3" style=" transition: all 0.2s ease-in-out; opacity: 1; transform: scale(1); transform-origin: top;">
@@ -107,7 +110,7 @@ cursor: pointer;
     </div>
 <% } %>
  </header>
-
+<% }%>
 <!-- Scroll Animation Script -->
 <script>
     document.addEventListener("scroll", () => {
