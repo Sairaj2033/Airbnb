@@ -2,190 +2,100 @@
 
 # 🏡 Airbnb Clone
 
-### A Full Stack Airbnb-Inspired Web Application
+### Full-Stack Accommodation Booking Platform
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-  <img src="https://img.shields.io/badge/EJS-8C6B3F?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+> A production-inspired Airbnb clone built with **Node.js, Express.js, MongoDB, Passport.js, Cloudinary, MapTiler, and Bootstrap**, featuring secure authentication, property listings, image uploads, reviews, and interactive maps.
+
+<p>
+
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+<img src="https://img.shields.io/badge/EJS-B4CA65?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+<img src="https://img.shields.io/badge/Passport.js-34E27A?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white"/>
+<img src="https://img.shields.io/badge/MapTiler-1D4ED8?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Joi-E8633F?style=for-the-badge"/>
+
 </p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/license/Sairaj2033/Airbnb?style=flat-square"/>
-  <img src="https://img.shields.io/github/stars/Sairaj2033/Airbnb?style=flat-square"/>
-  <img src="https://img.shields.io/github/forks/Sairaj2033/Airbnb?style=flat-square"/>
-  <img src="https://img.shields.io/github/issues/Sairaj2033/Airbnb?style=flat-square"/>
-</p>
-
-A modern **Airbnb-inspired web application** built with **Node.js, Express.js, MongoDB, Passport.js, Cloudinary, MapTiler, and Bootstrap**.
 
 </div>
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-## 👤 Authentication
-
-- Secure User Registration
-- Login & Logout
-- Session Authentication
-- Password Hashing
-- Route Protection
-
----
-
-## 🏡 Listings
-
-- View All Listings
-- View Listing Details
-- Create Listings
-- Edit Listings
-- Delete Listings
-- Host Ownership
+- 🔐 Secure Authentication & Authorization
+- 🏡 Create, Edit & Delete Property Listings
+- 📸 Cloudinary Image Uploads
+- ⭐ Reviews & Ratings
+- 🌍 Interactive Maps with Geocoding
+- 👤 Host Ownership & Route Protection
+- 📱 Fully Responsive UI
+- 💬 Flash Messages & Form Validation
 
 ---
 
-## 📸 Image Upload
+## 🛠 Tech Stack
 
-- Cloudinary Integration
-- Multer Uploads
-- Image Optimization
-- Replace Existing Images
+<p align="center">
 
----
+<img src="https://skillicons.dev/icons?i=html,css,js,nodejs,express,mongodb,git,github,vscode,postman"/>
 
-## 🌍 Maps
+</p>
 
-- Automatic Geocoding
-- MapTiler Integration
-- Latitude & Longitude Storage
+**Additional Technologies**
 
----
-
-## ⭐ Reviews
-
-- Add Reviews
-- Delete Reviews
-- Author Authorization
-- Rating System
-
----
-
-## 🎨 User Interface
-
-- Airbnb Inspired Design
-- Responsive Layout
-- Scroll Animated Navbar
-- Responsive Cards
-- Flash Messages
-- Mobile Friendly
-
----
-
-# 🛠 Tech Stack
-
-## Frontend
-
-- HTML5
-- CSS3
-- JavaScript
 - Bootstrap 5
 - EJS
-
-## Backend
-
-- Node.js
-- Express.js
-
-## Database
-
-- MongoDB
 - Mongoose
-
-## Authentication
-
 - Passport.js
 - Express Session
-
-## Image Storage
-
 - Cloudinary
 - Multer
-
-## APIs
-
-- OpenStreetMap Nominatim
 - MapTiler
+- Joi
+- Axios
+- Connect Flash
+- Method Override
 
 ---
 
-# ⚙️ Project Structure
+## 🏗️ Architecture
 
 ```text
-Airbnb/
-│
-├── controllers/
-├── middleware/
-├── models/
-├── public/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── routes/
-├── utils/
-├── views/
-├── init/
-│
-├── CloudConfig.js
-├── schema.js
-├── app.js
-├── package.json
-└── README.md
+Client
+   │
+   ▼
+Express.js Server
+   │
+   ▼
+Authentication (Passport.js)
+   │
+   ▼
+Controllers
+   │
+   ▼
+MongoDB (Mongoose)
+   │
+   ├── Cloudinary
+   └── MapTiler
 ```
 
 ---
 
-# 📷 Screenshots
-
-| Home | Listing |
-|------|----------|
-| Add Screenshot | Add Screenshot |
-
-| Details | Add Listing |
-|----------|--------------|
-| Add Screenshot | Add Screenshot |
-
----
-
-# 🚀 Installation
-
-## Clone Repository
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/Sairaj2033/Airbnb.git
-```
 
-```bash
 cd Airbnb
-```
 
----
-
-## Install Dependencies
-
-```bash
 npm install
 ```
 
----
-
-## Create Environment Variables
-
-Create a `.env` file.
+Create a `.env` file
 
 ```env
 ATLASDB_URL=
@@ -199,15 +109,13 @@ CLOUD_API_SECRET=
 MAP_TILER=
 ```
 
----
-
-## Start Development Server
+Run the application
 
 ```bash
 npm start
 ```
 
-Visit
+Open:
 
 ```
 http://localhost:8080
@@ -215,81 +123,48 @@ http://localhost:8080
 
 ---
 
-# 📦 Main Packages
+## 📚 What I Learned
 
-- Express.js
-- Mongoose
-- Passport.js
-- Passport Local
-- Express Session
-- Connect Flash
-- Cloudinary
-- Multer
-- Joi
-- Axios
-- Bootstrap
+- MVC Architecture
+- RESTful Routing
+- Authentication & Authorization
+- CRUD Operations
+- MongoDB & Mongoose
+- Cloud Image Storage
+- Session Management
+- API Integration
+- Input Validation
+- Production-Ready Backend Development
 
 ---
 
-# 🚀 Upcoming Features
+## 🚀 Future Enhancements
 
 - ❤️ Wishlist
 - 📅 Booking System
-- 💳 Online Payments
-- 🔍 Smart Search
-- 📱 Progressive Web App
+- 💳 Payment Integration
+- 🔍 Advanced Search & Filters
 - 🌙 Dark Mode
-- 🌐 Multi Language
-- 💬 Live Chat
-- 🔔 Email Notifications
 
 ---
 
-# 🤝 Contributing
+## 👨‍💻 Author
 
-Contributions are welcome.
+**Sairaj Patil**
 
-1. Fork the repository
-
-2. Create a new branch
-
-```bash
-git checkout -b feature-name
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Added Feature"
-```
-
-4. Push
-
-```bash
-git push origin feature-name
-```
-
-5. Open a Pull Request
-
----
-
-# 👨‍💻 Author
-
-### **Sairaj Patil**
-
-<p align="left">
-<a href="https://github.com/Sairaj2033">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://linkedin.com/in/YOUR-LINKEDIN">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin"/>
-</a>
-</p>
+- 🐙 GitHub: https://github.com/Sairaj2033
+- 💼 LinkedIn: https://linkedin.com/in/sairaj-patil-631701311
+- 📧 sairajpatil035@gmail.com
 
 ---
 
 <div align="center">
+
+### ⭐ If you found this project helpful, consider giving it a star!
+
+**Built with ❤️ by Sairaj Patil**
+
+</div>
 
 ### ⭐ Star this repository if you found it helpful!
 
